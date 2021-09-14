@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   build-deploy:
@@ -27,7 +27,6 @@ jobs:
         # If source files changed but packages didn't, rebuild from a prior cache.
         restore-keys: |
           ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
-
     - name: install
       run: yarn install
 
